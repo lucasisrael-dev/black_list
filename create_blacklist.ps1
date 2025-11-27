@@ -65,6 +65,8 @@ if ($Changes) {
     git add .
     git commit -m "Commit automático via PowerShell - $today"
     Write-Host "Commit criado."
+    git push
+    Write-Host "Github atualizado. push"
 } else {
     Write-Host "Nenhuma mudança para commitar."
 }
