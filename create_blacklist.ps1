@@ -28,6 +28,9 @@ $IpsParsed = foreach ($event in $events) {
     }
 }
 
+# Extract only the IP address
+$somenteIPs = $ipsFiltrado | Select-Object -ExpandProperty IpAddress
+
 # Remove duplicates
 $IpsParsed = $IpsParsed | Sort-Object -Unique
 
