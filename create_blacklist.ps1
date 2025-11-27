@@ -3,10 +3,10 @@
 
 # Set date-based filename
 $today = Get-Date -Format "dd-MM-yyyy_hh-mm-ss"
-$outFile = "C:\Users\lucasisrael\Documents\scripts\logs\ips-$today.csv"
+#$outFile = "C:\Users\lucasisrael\Documents\scripts\logs\ips-$today.csv"
 
 # Define the time range (last 24 hours)
-$startTime = (Get-Date).AddHours(-3)
+$startTime = (Get-Date).AddHours(-48)
 
 Write-Host "Searching last $MaxEventsToSearch Failed Logon events (ID 4625)..." -ForegroundColor Cyan
 
@@ -38,7 +38,7 @@ $IpsParsed = $IpsParsed | Where-Object {
 }
 
 # Showing IPs that were found
-Write-Host "IPs wete found $IpsParsed"
+Write-Host "IPs wehe found $IpsParsed"
 
 # Location of file blacklist.txt
 $BlacklistFile = "C:\Scripts\black_list\blacklist.txt"
