@@ -6,7 +6,7 @@ $today = Get-Date -Format "dd-MM-yyyy_hh-mm-ss"
 #$outFile = "C:\Users\lucasisrael\Documents\scripts\logs\ips-$today.csv"
 
 # Define the time range (last 24 hours)
-$startTime = (Get-Date).AddHours(-48)
+$startTime = (Get-Date).AddHours(-1)
 
 Write-Host "Searching last $MaxEventsToSearch Failed Logon events (ID 4625)..." -ForegroundColor Cyan
 
@@ -33,6 +33,7 @@ $IpsParsed = $IpsParsed | Sort-Object -Unique
 
 # Remove local IP
 $IpsParsed = $IpsParsed | Where-Object {
+    ($_ -notmatch '^::1$') -and
     ($_ -notmatch '^172\.') -and
     ($_ -notmatch '^168\.')
 }
