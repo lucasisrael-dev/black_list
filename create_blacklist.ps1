@@ -6,7 +6,7 @@ $today = Get-Date -Format "dd-MM-yyyy_hh-mm-ss"
 #$outFile = "C:\Users\lucasisrael\Documents\scripts\logs\ips-$today.csv"
 
 # Define the time range (last 24 hours)
-$startTime = (Get-Date).AddHours(-24)
+$startTime = (Get-Date).AddHours(-48)
 
 Write-Host "Searching last $MaxEventsToSearch Failed Logon events (ID 4625)..." -ForegroundColor Cyan
 
